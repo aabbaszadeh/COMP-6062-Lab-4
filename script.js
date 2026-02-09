@@ -7,11 +7,9 @@ function triangleArea(base, height) {
   const area = (base * height) / 2;
   return area;
 }
-
 console.log("Triangle Area:");
-console.log(triangleArea(3, 4).toFixed(1)); // 6.0
-console.log(triangleArea(5, 7).toFixed(1)); // 17.5
-
+console.log(triangleArea(3, 4).toFixed(1)); 
+console.log(triangleArea(5, 7).toFixed(1));
 // ==============================
 // 2) Volume of a sphere
 // Volume = (4/3) * pi * radius^3
@@ -21,11 +19,9 @@ function sphereVolume(radius) {
   const volume = (4 / 3) * Math.PI * (radius ** 3);
   return volume;
 }
-
 console.log("\nSphere Volume:");
-console.log(sphereVolume(3).toFixed(1)); // 113.1
-console.log(sphereVolume(5).toFixed(1)); // 523.6
-
+console.log(sphereVolume(3).toFixed(1)); 
+console.log(sphereVolume(5).toFixed(1)); 
 // ==============================
 // 3) Convert distance to meters
 // Params: distance, unit
@@ -37,9 +33,7 @@ console.log(sphereVolume(5).toFixed(1)); // 523.6
 function toMeters(distance, unit) {
   // short circuit
   if (distance === 0 || unit === "m") return distance;
-
   let meters;
-
   switch (unit) {
     case "km":
       meters = distance * 1000;
@@ -51,7 +45,7 @@ function toMeters(distance, unit) {
       meters = distance * 1609.344;
       break;
     default:
-      // If unit is unknown, return NaN (or you could throw an error)
+      
       meters = NaN;
   }
 
@@ -59,10 +53,10 @@ function toMeters(distance, unit) {
 }
 
 console.log("\nTo Meters:");
-console.log(toMeters(50, "m").toFixed(2));     // 50.00
-console.log(toMeters(100, "y").toFixed(2));    // 91.44
-console.log(toMeters(1, "mi").toFixed(2));     // 1609.34
-console.log(toMeters(1.234, "km").toFixed(2)); // 1234.00
+console.log(toMeters(50, "m").toFixed(2));     
+console.log(toMeters(100, "y").toFixed(2));    
+console.log(toMeters(1, "mi").toFixed(2));     
+console.log(toMeters(1.234, "km").toFixed(2)); 
 
 // ==============================
 // 4) Convert time string to seconds
@@ -71,8 +65,7 @@ console.log(toMeters(1.234, "km").toFixed(2)); // 1234.00
 // Log output as integer
 // ==============================
 function timeToSeconds(time) {
-  const parts = time.split(":").map(Number); // converts ["04","51"] -> [4, 51]
-
+  const parts = time.split(":").map(Number); 
   if (parts.length === 3) {
     const [hh, mm, ss] = parts;
     return (hh * 3600) + (mm * 60) + ss;
@@ -83,13 +76,13 @@ function timeToSeconds(time) {
     return (mm * 60) + ss;
   }
 
-  // length === 1
+  
   return parts[0];
 }
 
 console.log("\nTime To Seconds:");
-console.log(timeToSeconds("02:33:21")); // 9201
-console.log(timeToSeconds("00:04:51")); // 291
-console.log(timeToSeconds("04:51"));    // 291
-console.log(timeToSeconds("00:13"));    // 13*? (actually 13 seconds because it's MM:SS => 0*60+13 = 13)
-console.log(timeToSeconds("13"));       // 13
+console.log(timeToSeconds("02:33:21")); 
+console.log(timeToSeconds("00:04:51")); 
+console.log(timeToSeconds("04:51"));    
+console.log(timeToSeconds("00:13"));    
+console.log(timeToSeconds("13"));       
